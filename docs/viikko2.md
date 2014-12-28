@@ -1,1 +1,4 @@
- 
+Viikkoraportti 2
+
+Olen testannut moottorien ja sensorien toiminnan. Olen tutustunut matemaattiseen kaavaan, jolla auringon sijainti voidaan määrittää. Löysin valmiin algoritmin, joka laskee tarvittavat zenith ja azimuth kulmat. Olen tutustunut robottien ohjelmoinnissa käytettyyn agenttipohjaiseen rakenteeseen perustuvaan sovelluskehykseen ja hahmotellut ohjelman rakennetta. Olen suunnitellut tarvittavat metodit toimintoja varten. Kokosin ensimmäisen fyysisen prototyypin legoista, mutta siitä ei tullut tarpeeksi tukeva. Suunnittelin ja rakensin toisen melko stabiilin version robotista. Tutustuin myös hieman rattaiden käyttöön ja uskon ymmärtäväni perusperiaatteen ja hyödyt. Liikkuminen eteenpäin, taaksepäin ja kääntyminen paikallaan toimii. 
+Alkuperäinen ideani vaati nxt:hen reaaliaikaista kellonaikaa, jotta auringon sijainti voidaan laskea. Etsin hieman tietoa ja vaikuttaa siltä, että kellonajan näyttämiseen tarvitaan erillinen sensori. Täytyy miettiä mitä vaihtoehtoja on. Jos tarvittavaa sensoria ei löydy, niin kellonajan voi syöttää manuaalisesti. Seuraavalla viikolla yritän saada ohjelmakoodin mahdollisimman hyvin pakettiin. 
