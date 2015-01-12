@@ -42,7 +42,7 @@ public class MotorTest implements StartupTest {
             testMover.dropPanel(720);
             Delay.msDelay(2000);
             testMover.liftPanel(720);
-            testMover.findNewPosition(45, 30);
+            testMover.findNewPosition(45);
             Sound.beepSequenceUp();            
             testMover.endMovement();
         } catch (Exception e) {

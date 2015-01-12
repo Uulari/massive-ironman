@@ -94,15 +94,18 @@ public class MovementController {
     
     
     // method which optimizes ST position for best possible angle to harvest sunlight, uses method setVerticalAngle and setHorizontalAngle
-    public void optimizePosition(int horizontalReading, int verticalReading) {
-        setVerticalAngle(verticalReading);
+    public void optimizePosition(int horizontalReading) {
+        
         setHorizontalAngle(horizontalReading);
     }
     
     // method which gets current compass reading and optimizes to reach target reading
-    public void setVerticalAngle(int degrees) {
-    	panelMotor.rotate(-(panelMotor.getTachoCount()));
+    public void setVerticalAngle(int degrees) {    	
         liftPanel(degrees*22);
+    }
+    
+    public void resetPanel() {
+    	panelMotor.rotate(-(panelMotor.getTachoCount()));
     }
     
     // method which gets current panelMotor reading and adjusts angle to reach target reading
@@ -120,7 +123,7 @@ public class MovementController {
     }
     
     //method by which, robot finds new position from right, left, or behind existing one depending if there are no obstacles.
-    public void findNewPosition(int horizontal, int vertical) {
+    public void findNewPosition(int horizontal) {
     	
     	turnRight(90);
     	
@@ -129,20 +132,20 @@ public class MovementController {
     		
     		if (ultrasonic.getNearestObjectRange() >= 120) {
     			moveForward(100);
-    			optimizePosition(horizontal, vertical);
+    			optimizePosition(horizontal);
     			
     		} else {
     			turnLeft(90);
     			if (ultrasonic.getNearestObjectRange() > 120) {
     				moveForward(100);
-    				optimizePosition(horizontal, vertical);
+    				optimizePosition(horizontal);
     			} else {
-    				optimizePosition(horizontal, vertical);
+    				optimizePosition(horizontal);
     			}
     		}
     	} else {
     		moveForward(100);
-    		optimizePosition(horizontal, vertical);
+    		optimizePosition(horizontal);
     		
     	}
     

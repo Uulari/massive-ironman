@@ -17,15 +17,18 @@ public class StartTimer implements TimerListener {
 	BluetoothController btcont = new BluetoothController();
 	
 	//this function is executed when Timer reaches 0
-	
+	public StartTimer() {
+		this.movement.initiate();		
+	}
 	
 	  
 	//this function contains the main functionality of the robot. It is called when Timer reaches 0.
 	@Override
 	public void timedOut() {		
 		
-		movement.initiate();
+		
 		movement.turnNorth();
+		movement.resetPanel();
 		btcont.openConnection();
 		int azimuth = btcont.requestAzimuthAngle();
 		btcont.closeConnection();
@@ -40,7 +43,7 @@ public class StartTimer implements TimerListener {
 		}		
 		Sound.beepSequenceUp();
 		if(us.getNearestObjectRange() < 100) {
-			movement.findNewPosition(azimuth, zenith);
+			movement.findNewPosition(azimuth);
 		}
 	}
 	
